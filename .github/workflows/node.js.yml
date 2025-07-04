@@ -33,6 +33,7 @@ jobs:
       run: node main.js
       env:
         API0_URL: ${{ secrets.API0_URL }}
+        API0_KEY: ${{ secrets.API0_KEY }}
 
     - name: Commit changes
       run: |
