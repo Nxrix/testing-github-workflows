@@ -54,6 +54,6 @@ const update_g = (n,p) => {
       "Authorization": "Bearer "+process.env.API0_KEY
     }
   })).text();
-  fs.writeFileSync("output.txt",r+"\n"+process.env.API0_KEY.split("-")[0]);
+  fs.writeFileSync("output.txt",r);
 
 })();
