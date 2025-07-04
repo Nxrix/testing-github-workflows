@@ -18,17 +18,19 @@ jobs:
         node-version: [22.x]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+
+    - name: checkout
+      uses: actions/checkout@v4
+
+    - name: node
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+
     - run: node main.js
+  
     - run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add output.txt
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git commit -m "Update output.txt"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
