@@ -3,6 +3,7 @@ const fs = require("fs");
 
 ( async () => {
 
-  fs.writeFileSync("output.txt","hello");
+  const r = await(await fetch(process.env.API0_URL)).text();
+  fs.writeFileSync("output.txt",r);
 
-})()
+})();

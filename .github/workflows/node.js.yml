@@ -31,7 +31,9 @@ jobs:
 
     - name: Run main.js
       run: node main.js
-  
+      env:
+        API0_URL: ${{ secrets.API0_URL }}
+
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
