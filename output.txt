@@ -1,10 +1,10 @@
-nx - 1377 07:18:05 - 342
+nx - 1377 07:22:53 - 347
 
   V:
 
-    470,966,479 IRT
-          5,224 USD ( 1 USD =  90,160 IRT )
-        1,874.7 TON ( 1 TON =    2.79 USD )
+    471,113,942 IRT
+          5,225 USD ( 1 USD =  90,160 IRT )
+       1,870.12 TON ( 1 TON =    2.79 USD )
 
   A:
 
@@ -16,10 +16,10 @@ nx - 1377 07:18:05 - 342
 
     M:
 
-      ScaredCat-3258    |  78 TON | 216 USD
+      ScaredCat-3258    |  78 TON | 217 USD
       KissedFrog-872    |  32 TON |  89 USD
       -------------------------------------
-      Total             | 110 TON | 305 USD
+      Total             | 110 TON | 306 USD
 
     A:
 
@@ -28,4 +28,4 @@ nx - 1377 07:18:05 - 342
       SkullFlower-12971 |   9 TON |  24 USD
       BDayCandle-192253 |   2 TON |   6 USD
       -------------------------------------
-      Total             | 118 TON | 328 USD
+      Total             | 118 TON | 329 USD
