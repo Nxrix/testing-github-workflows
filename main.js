@@ -49,7 +49,7 @@ const update_g = (n,p) => {
 
   //const r = await(await fetch(process.env.API0_URL)).text();
   //fs.writeFileSync("output.txt",r);
-  const r = await(await fetch(process.env.API0_URL,{
+  const r = await(await fetch(process.env.API0_URL+"/gifts/prices",{
     headers: {
       "Authorization": "Bearer "+process.env.API0_KEY
     }
