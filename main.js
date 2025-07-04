@@ -41,10 +41,6 @@ const update_g = (n,p) => {
   }
 }
 
-/*for (const [n,...p] of r) {
-  update_g(n,p);
-}*/
-
 ( async () => {
 
   //const r = await(await fetch(process.env.API0_URL)).text();
@@ -53,7 +49,10 @@ const update_g = (n,p) => {
     headers: {
       "Authorization": "Bearer "+process.env.API0_KEY
     }
-  })).text();
-  fs.writeFileSync("output.txt",r);
+  })).json();
+  for (const [n,p1,p2,m] of r) {
+    update_g(n,[p1,p2]);
+  }
+  fs.writeFileSync("output.txt",JSON.stringify(r,null,2));
 
 })();
