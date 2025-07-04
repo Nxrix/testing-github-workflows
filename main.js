@@ -36,7 +36,7 @@ const update_g = (n,p) => {
     } else {
       c = Array(l[t]).fill([0,0]);
     }
-    c = updateCandles(c,p,l[t]);
+    c = update_c(c,p,l[t]);
     fs.writeFileSync(f,JSON.stringify(c),"utf8");
   }
 }
