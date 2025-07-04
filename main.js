@@ -1,18 +1,6 @@
 const fetch = require("node-fetch");
 const fs = require("fs");
 
-const update_c = (c,n,m) => {
-  /*if (!Array.isArray(c)) {
-    c = Array(m).fill([0,0]);
-  }
-  if (c.length>m) {
-    c = c.slice(c.length-m);
-  }*/
-  c.shift();
-  c.push(n);
-  return c;
-}
-
 const update_g = (n,p) => {
   const l = {
     daily: 144,
@@ -28,15 +16,12 @@ const update_g = (n,p) => {
     const f = b+"/"+t+".json";
     let c = [];
     if (fs.existsSync(f)) {
-      try {
-        c = JSON.parse(fs.readFileSync(f,"utf8"));
-      } catch {
-        c = Array(l[t]).fill([0,0]);
-      }
+      c = JSON.parse(fs.readFileSync(f,"utf8"));
     } else {
-      c = Array(l[t]).fill([0,0]);
+      c = Array(l[t]).fill([0,0,0]);
     }
-    c = update_c(c,p,l[t]);
+    c.shift();
+    c.push(p);
     fs.writeFileSync(f,JSON.stringify(c),"utf8");
   }
 }
@@ -50,9 +35,9 @@ const update_g = (n,p) => {
       "Authorization": "Bearer "+process.env.API0_KEY
     }
   })).json();
-  for (const [n,p1,p2,m] of r) {
-    update_g(n,[p1,p2]);
+  for (const [n,...p] of r) {
+    update_g(n,p);
   }
-  fs.writeFileSync("output.txt",JSON.stringify(r,null,2));
+  fs.writeFileSync("./gifts/prices.json",JSON.stringify(r),"utf8");
 
 })();
