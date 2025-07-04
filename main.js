@@ -24,7 +24,7 @@ const update_g = (n,p) => {
   if (!fs.existsSync(b)) {
     fs.mkdirSync(b,{ recursive: true });
   }
-  for (const tf of ["daily","weekly","monthly","yearly"]) {
+  for (const t of ["daily","weekly","monthly","yearly"]) {
     const f = b+"/"+t+".json";
     let c = [];
     if (fs.existsSync(f)) {
