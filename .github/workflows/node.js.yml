@@ -39,6 +39,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add -f output.txt
+        git add output.txt
+        git add gifts/
         git commit -m "Update output.txt"
         git push
