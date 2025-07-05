@@ -44,8 +44,8 @@ const update_g = (n,p) => {
   let canvas = new Canvas(1024,1024),
     ctx = canvas.getContext("2d"),
     {w,h} = canvas;
-  const img = await loadImage(`https://api.changes.tg/model/HeroicHelmet/original.png`);
-  ctx.drawImage(img,w*0.1,w*0.1,w*0.9,h*0.9);
+  //const img = await loadImage(`https://api.changes.tg/model/HeroicHelmet/original.png`);
+  //ctx.drawImage(img,w*0.1,w*0.1,w*0.9,h*0.9);
   const buf = await canvas.toBuffer("image/png");
   fs.writeFileSync("gifts/prices.png",buf);
 
